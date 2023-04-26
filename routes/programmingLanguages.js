@@ -20,4 +20,13 @@ router.post('/', async function (req, res, next) {
   }
 });
 
+router.put('/:id', async function (req, res, next) {
+  try {
+    res.json(await programmingLanguages.update(req.params.id, req.body));
+  } catch (err) {
+    console.error(`Error while updating programming language`, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;
