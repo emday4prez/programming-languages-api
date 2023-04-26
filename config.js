@@ -1,10 +1,11 @@
+require('dotenv').config();
+
 const config = {
   db: {
-    /* don't expose password or any sensitive info, done only for demo */
     host: 'db4free.net',
-    user: 'restapitest123',
-    password: 'restapitest123',
-    database: 'restapitest123',
+    user: process.env.USERNAME,
+    password: process.env.PW,
+    database: process.env.DB,
   },
   listPerPage: 10,
 };
